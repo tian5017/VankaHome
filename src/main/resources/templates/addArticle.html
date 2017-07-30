@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>写文章</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/quill/quill.snow.css}"/>
+    <link rel="stylesheet" th:href="@{/quill/quill.core.css}"/>
+    <link rel="stylesheet" th:href="@{/css/addArticle.css}"/>
+</head>
+<body>
+<input type="hidden" id="project_url" th:value="@{/}"/>
+<input type="hidden" id="user_id" th:value="${USER_ID}"/>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                <span class="sr-only">菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">写文章</a>
+        </div>
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#" onclick="to_article_list()">文章列表</a></li>
+                <li><a href="#" onclick="to_article_main()">个人中心</a></li>
+                <li><a href="#" onclick="to_article_add()">写文章</a></li>
+                <li><a href="#" onclick="to_article_face()">人脸识别</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="a-count">
+    <div class="a-count-title">
+        <label class="title-tips">标题</label>
+        <input type="text" class="title-count" placeholder="输入文章标题" id="title-name"/>
+    </div>
+    <div class="a-count-title">
+        <label class="title-tips">作者</label>
+        <input type="text" class="title-count" placeholder="输入文章作者" id="title-author"/>
+    </div>
+    <div id="standalone-container">
+        <div id="toolbar-container">
+                <span class="ql-formats">
+                    <select class="ql-size"></select>
+                </span>
+            <span class="ql-formats">
+                    <button class="ql-bold"></button>
+                    <button class="ql-italic"></button>
+                    <button class="ql-underline"></button>
+                </span>
+            <span class="ql-formats">
+                    <select class="ql-color"></select>
+                    <select class="ql-background"></select>
+                </span>
+            <span class="ql-formats">
+                    <button class="ql-script" value="sub"></button>
+                    <button class="ql-script" value="super"></button>
+                </span>
+            <span class="ql-formats">
+                    <button class="ql-blockquote"></button>
+                    <button class="ql-code-block"></button>
+                </span>
+            <span class="ql-formats">
+                    <button class="ql-list" value="ordered"></button>
+                    <button class="ql-list" value="bullet"></button>
+                </span>
+            <span class="ql-formats">
+                    <button class="ql-direction" value="rtl"></button>
+                    <select class="ql-align"></select>
+                </span>
+            <span class="ql-formats">
+                    <button class="ql-link"></button>
+                    <button class="ql-image"></button>
+                </span>
+            <span class="ql-formats">
+                    <button class="ql-clean"></button>
+                </span>
+        </div>
+        <div id="editor-container">开始编辑文章内容</div>
+    </div>
+    <div class="subm-bt">
+        <input type="button" value="提交" onclick="to_submit()"/>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/js/jquery-1.11.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.base64.js}"></script>
+<script type="text/javascript" th:src="@{/quill/quill.core.js}"></script>
+<script type="text/javascript" th:src="@{/quill/quill.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/base.js}"></script>
+<script type="text/javascript" th:src="@{/js/addArticle.js}"></script>
+</body>
+</html>

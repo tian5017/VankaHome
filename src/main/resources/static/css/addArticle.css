@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.a-count-title{
+    margin: 20px;
+}
+.title-tips{
+    font-weight: normal;
+    margin-right: 10px;
+}
+.title-count{
+    padding: 5px;
+    width: 200px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+}
+.a-count{
+    width:100%;
+    margin:0 auto;
+}
+#standalone-container {
+    margin: 0 20px;
+    max-width: 720px;
+}
+#editor-container {
+    height: 350px;
+}
+.subm-bt{
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+}
+.subm-bt>input{
+    width: 100px;
+    height: 28px;
+    color: #ffffff;
+    background-color: #5bc0de;
+    border: 1px solid #5bc0de;
+}

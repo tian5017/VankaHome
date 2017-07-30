@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#img-show{
+    display: none;
+    margin: 20px;
+    text-align: center;
+    position: relative;
+}
+#img-show>img{
+    width: 100%;
+}
+.red-k{
+    display: none;
+    border: 1px solid red;
+    position: absolute;
+}
+#sb_div{
+    padding: 20px;
+    margin: 20px auto;
+    display: none;
+}
+#sb_div>p{
+    font-size: 18px;
+}

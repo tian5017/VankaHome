@@ -1,0 +1,12 @@
+.panel-title {
+    font-size: 20px;
+    text-align: center;
+}
+#article-count p{
+    font-size: 15px;
+    text-indent: 30px;
+}
+#article-count p>img{
+    margin-left: -30px;
+    max-width: 100%;
+}

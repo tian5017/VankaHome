@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>人脸识别</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/face.css}"/>
+</head>
+<body>
+<input type="hidden" id="project_url" th:value="@{/}"/>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                <span class="sr-only">菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">人脸识别</a>
+        </div>
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#" onclick="to_article_list()">文章列表</a></li>
+                <li><a href="#" onclick="to_article_main()">个人中心</a></li>
+                <li><a href="#" onclick="to_article_add()">写文章</a></li>
+                <li><a href="#" onclick="to_article_face()">人脸识别</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="face-div">
+    <div id="img-show"><img src=""/></div>
+    <form id="img-form" role="form" method="post" action="https://api-cn.faceplusplus.com/facepp/v3/detect" enctype="multipart/form-data" style="padding: 20px;">
+        <div class="form-group">
+            <input type="hidden" name="api_key" value="XdfdFGLO4NoXbayvndVzaJYQ0W2TQMJD"/>
+            <input type="hidden" name="api_secret" value="UTvRJPyIai-AumOvLqi4v8e1vgrrr2cE"/>
+            <input type="hidden" name="return_attributes" value="gender,age,smiling,glass,headpose,emotion,ethnicity"/>
+            <label for="inputfile">上传照片</label>
+            <input type="file" name="image_file" id="inputfile" onchange="show_img(this.files)"/>
+            <p class="help-block">请上传一张jpg/jpeg/png格式的照片，然后你将看到奇迹的发生！</p>
+        </div>
+        <button type="button" class="btn btn-default" onclick="to_submit()">提交</button>
+    </form>
+    <div id="sb_div"></div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">提示</h4>
+            </div>
+            <div class="modal-body" id="myModalCount"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/js/jquery-1.11.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.form.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/base.js}"></script>
+<script type="text/javascript" th:src="@{/js/face.js}"></script>
+</body>
+</html>
