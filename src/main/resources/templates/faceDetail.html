@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>识别结果</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/face.css}"/>
+</head>
+<body>
+<input type="hidden" id="project_url" th:value="@{/}"/>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">识别结果</a>
+        </div>
+    </div>
+</nav>
+<div class="face-div">
+    <div id="img-show"><img src=""/></div>
+    <div id="sb_div"></div>
+    <img id="temp-img" src="" style="display:none;"/>
+</div>
+<div style="text-align:center;margin:0 auto 30px auto;">
+    <a class="btn btn-default" th:href="@{/face/index}" role="button">返回</a>
+</div>
+<script th:inline="javascript">
+    var imgUrl = [[${FaceImageUrl}]];
+    var faceRequestVo = [[${FaceRequestVo}]];
+</script>
+<script type="text/javascript" th:src="@{/js/jquery-1.11.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/base.js}"></script>
+<script type="text/javascript" th:src="@{/js/faceDetail.js}"></script>
+</body>
+</html>

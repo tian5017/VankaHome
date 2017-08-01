@@ -34,13 +34,11 @@
 </nav>
 <div class="face-div">
     <div id="img-show"><img src=""/></div>
-    <form id="img-form" role="form" method="post" action="https://api-cn.faceplusplus.com/facepp/v3/detect" enctype="multipart/form-data" style="padding: 20px;">
+    <form id="img-form" role="form" method="post" enctype="multipart/form-data" style="padding: 20px;">
         <div class="form-group">
-            <input type="hidden" name="api_key" value="XdfdFGLO4NoXbayvndVzaJYQ0W2TQMJD"/>
-            <input type="hidden" name="api_secret" value="UTvRJPyIai-AumOvLqi4v8e1vgrrr2cE"/>
-            <input type="hidden" name="return_attributes" value="gender,age,smiling,glass,headpose,emotion,ethnicity"/>
+            <input type="hidden" id="imgBase64" name="imgBase64"/>
             <label for="inputfile">上传照片</label>
-            <input type="file" name="image_file" id="inputfile" onchange="show_img(this.files)"/>
+            <input type="file" name="imageFile" id="inputfile" onchange="show_img(this.files)"/>
             <p class="help-block">请上传一张jpg/jpeg/png格式的照片，然后你将看到奇迹的发生！</p>
         </div>
         <button type="button" class="btn btn-default" onclick="to_submit()">提交</button>
@@ -64,7 +62,7 @@
 </div>
 <script type="text/javascript" th:src="@{/js/jquery-1.11.1.min.js}"></script>
 <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
-<script type="text/javascript" th:src="@{/js/jquery.form.min.js}"></script>
+<!--<script type="text/javascript" th:src="@{/js/jquery.form.min.js}"></script>-->
 <script type="text/javascript" th:src="@{/js/base.js}"></script>
 <script type="text/javascript" th:src="@{/js/face.js}"></script>
 </body>

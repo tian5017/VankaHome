@@ -44,5 +44,5 @@ function to_article_add(){
 }
 
 function to_article_face(){
-    location.href = project_url + "/article/index";
+    location.href = project_url + "/face/index";
 }

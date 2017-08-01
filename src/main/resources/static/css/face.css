@@ -15,6 +15,7 @@
     display: none;
     border: 1px solid red;
     position: absolute;
+    color: red;
 }
 #sb_div{
     padding: 20px;
